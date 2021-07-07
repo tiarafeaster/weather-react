@@ -8,6 +8,17 @@ function App() {
         <h1>Weather App - React Version pt.1</h1>
         <Weather />
       </header>
+      <footer>
+        <h3>
+          This project is open source and was coded by{" "}
+          <a
+            href="www.https://github.com/tiarafeaster/weather-react"
+            target="_blank"
+          >
+            Tiara Feaster{" "}
+          </a>
+        </h3>
+      </footer>
     </div>
   );
 }
