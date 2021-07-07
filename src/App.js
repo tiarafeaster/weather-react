@@ -14,6 +14,7 @@ function App() {
           <a
             href="https://github.com/tiarafeaster/weather-react"
             target="_blank"
+            rel="noreferrer"
           >
             Tiara Feaster{" "}
           </a>
