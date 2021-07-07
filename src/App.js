@@ -11,7 +11,10 @@ function App() {
       <footer>
         <h3>
           This project is open source and was coded by{" "}
-          <a href="www.github.com/tiarafeaster/weather-react" target="_blank">
+          <a
+            href="https://github.com/tiarafeaster/weather-react"
+            target="_blank"
+          >
             Tiara Feaster{" "}
           </a>
         </h3>
