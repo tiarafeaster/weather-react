@@ -2,17 +2,24 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./weather.css";
 
-function Weather() {
-  let [ready, setReady] = useState(false);
-  let [city, setCity] = useState();
-  let [temp, setTemp] = useState(null);
+function Weather(props) {
+  let [weatherData, setWeatherData] = useState({ ready: false });
 
   function showTemp(response) {
-    setTemp(Math.round(response.data.main.temp));
-    setReady(true);
+    console.log(response.data);
+    setWeatherData({
+      ready: true,
+      temperature: Math.round(response.data.main.temp),
+      wind: Math.round(response.data.wind.speed),
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      city: response.data.name,
+      iconUrl: "http://openweathermap.org/img/wn/50d@2x.png",
+      date: "Wed 14, July",
+    });
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="container">
         <div className="weather">
@@ -38,11 +45,11 @@ function Weather() {
             <div className="col-8 d-flex align-items-center" id="weather">
               <img
                 id="icon"
-                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-                alt="sunny weather"
+                src={weatherData.iconUrl}
+                alt={weatherData.description}
               />
               <div>
-                <span id="temperature"> {temp} </span>
+                <span id="temperature"> {weatherData.temperature}</span>
                 <span id="units">
                   <a href="#" id="fahr-link">
                     {" "}
@@ -58,19 +65,19 @@ function Weather() {
               <ul>
                 <li>
                   {" "}
-                  Humidity: <span id="humidity"></span> 40%
+                  Humidity: <span id="humidity"> {weatherData.humidity}</span> %
                 </li>
                 <li>
                   {" "}
-                  Wind: <span id="wind"></span> 20 mph
+                  Wind: <span id="wind">{weatherData.wind}</span> mph
                 </li>
               </ul>
             </div>
             <div className="col-4" id="city-name">
-              <h3 className="city">Orlando</h3>
+              <h3 className="city">{weatherData.city}</h3>
               <ul className="date-time">
-                <li id="date">Wed, 14 July</li>
-                <li id="description">Clear Sky</li>
+                <li id="date">{weatherData.date}</li>
+                <li id="description">{weatherData.description}</li>
               </ul>
             </div>
           </div>
@@ -79,8 +86,8 @@ function Weather() {
     );
   } else {
     const apiKey = "5423fee45fccae4c3cd5d7b43daf88ad";
-    let city = "New York";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let city = "Paris";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
 
     axios.get(url).then(showTemp);
   }
