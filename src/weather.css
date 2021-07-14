@@ -40,9 +40,8 @@ h3 {
 
 canvas {
   display: inline-block;
-  height: 64px;
-  width: 64px;
   margin-right: 7px;
+  margin-top: 10px;
 }
 
 #city-name {

@@ -28,7 +28,6 @@ function WeatherIcon(props) {
       icon={codeMapping[props.code]}
       color="#CEE3FA"
       size={64}
-      animate={true}
     />
   );
 }
