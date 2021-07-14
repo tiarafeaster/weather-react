@@ -8,7 +8,7 @@ function App() {
         <h1>Weather App - React Version pt.1</h1>
         <Weather defaultCity="Paris" />
         <h5>
-          This project is{" "}
+          This React project is{" "}
           <a
             href="https://github.com/tiarafeaster/weather-react"
             target="_blank"
