@@ -8,11 +8,21 @@ function App() {
         <h1>Weather App - React Version pt.1</h1>
         <Weather />
         <h5>
-          This project is open source and was coded by{" "}
+          This project is{" "}
           <a
             href="https://github.com/tiarafeaster/weather-react"
             target="_blank"
             rel="noreferrer"
+            title="link to github repo"
+          >
+            open source{" "}
+          </a>{" "}
+          and was coded by{" "}
+          <a
+            href="http://www.tiarajfeaster.com"
+            target="_blank"
+            rel="noreferrer"
+            title="link to Tiara Feaster portfolio"
           >
             ✊🏾 Tiara Feaster 🏳️‍🌈{" "}
           </a>
