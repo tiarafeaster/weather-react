@@ -40,15 +40,66 @@ function Weather() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="search"
-        placeholder="Please enter a city..."
-        onChange={updateCity}
-      />
-      <input type="submit" value="Search" />
-      <h3>{temp}</h3>
-    </form>
+    <div className="container">
+      <div className="weather">
+        <form onSubmit={handleSubmit} className="search-form">
+          <div className="row">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="Please enter a city..."
+                className="form-control"
+                onChange={updateCity}
+              />
+            </div>
+            <div className="col-3">
+              <input type="submit" value="Search" className="btn btn-primary" />
+              <h3>{temp}</h3>
+            </div>
+          </div>
+        </form>
+        <div className="row align-items-center">
+          <div className="col-8 d=flex align-items-center" id="weather">
+            <img
+              id="icon"
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="sunny weather"
+            />
+            <div>
+              <span id="temperature"> 80 </span>
+              <span id="units">
+                <a href="#" id="fahr-link">
+                  {" "}
+                  °F
+                </a>{" "}
+                |
+                <a href="#" id="celsius-link">
+                  {" "}
+                  °C{" "}
+                </a>
+              </span>
+            </div>
+            <ul>
+              <li>
+                {" "}
+                Humidity: <span id="humidity"></span> 40%
+              </li>
+              <li>
+                {" "}
+                Wind: <span id="wind"></span> 20 mph
+              </li>
+            </ul>
+          </div>
+          <div className="col-4" id="city-name">
+            <h3 className="city">Orlando</h3>
+            <ul className="date-time">
+              <li id="date">Wednesday, 14 July</li>
+              <li id="description">Clear Sky</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
