@@ -8,7 +8,11 @@ function WeatherInfo(props) {
     <div className="weatherinfo">
       <div className="row align-items-center">
         <div className="col-8 d-flex align-items-center" id="weather">
-          <WeatherIcon code={props.data.icon} alt={props.data.description} />
+          <WeatherIcon
+            code={props.data.icon}
+            size={64}
+            alt={props.data.description}
+          />
           <div>
             <WeatherTemperature celsius={props.data.temperature} />
           </div>
