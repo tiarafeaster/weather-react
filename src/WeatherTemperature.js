@@ -22,10 +22,10 @@ function WeatherTemperature(props) {
       <div>
         <span id="temperature"> {Math.round(props.celsius)}</span>
         <span id="units">
-            C |
+           °C |
           <a href="/" onClick={showFahr} id="fahr-link">
             {" "}
-            F
+            °F
           </a>{" "}
         </span>
       </div>
@@ -37,9 +37,9 @@ function WeatherTemperature(props) {
         <span id="units">
           <a href="/" onClick={showCelsius} id="celsius-link">
             {" "}
-            C |{" "}
+            °C |{" "}
           </a>
-          F
+          °F
         </span>
       </div>
     );

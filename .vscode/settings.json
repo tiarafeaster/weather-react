@@ -1,0 +1,6 @@
+{
+  "workbench.editor.enablePreview": false,
+  "terminal.integrated.commandsToSkipShell": [
+    "\"editor.tokenColorCustomizations\": { \"comments\" : \"#229977\"  }"
+  ]
+}
