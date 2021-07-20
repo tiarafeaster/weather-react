@@ -9,7 +9,6 @@ function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
 
   function showTemp(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       coordinates: response.data.coord,
@@ -67,9 +66,9 @@ function Weather(props) {
       </div>
     );
   } else {
+    search();
+    return "Loading...";
   }
-  search();
-  return "Loading...";
 }
 
 export default Weather;
